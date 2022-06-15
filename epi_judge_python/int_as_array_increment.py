@@ -5,7 +5,6 @@ from test_framework import generic_test
 
 def plus_one(A: List[int]) -> List[int]:
     # [1,2,9] --> [1,3,0], [9,9,9] --> [1,0,0,0]
-
     A[-1] += 1
 
     for i in reversed(range(1, len(A))):
