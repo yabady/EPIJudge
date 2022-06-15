@@ -5,7 +5,12 @@ from test_framework import generic_test
 
 # Check if a partially filled matrix has any conflicts.
 def is_valid_sudoku(partial_assignment: List[List[int]]) -> bool:
-    # TODO - you fill in here.
+    
+    def has_duplicates(block):
+        block = list(filter(lambda x: x != 0, block))
+        return len(set(block)) != len(block)
+
+
     return True
 
 
