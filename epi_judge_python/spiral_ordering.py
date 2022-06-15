@@ -12,7 +12,7 @@ def matrix_in_spiral_order(square_matrix: List[List[int]]) -> List[int]:
     while (t <= b and l <= r):
 
         if d == 0:
-            for i in range(t, r+1):
+            for i in range(l, r+1):
                 spiral.append(square_matrix[t][i])
             t += 1
 
@@ -29,7 +29,6 @@ def matrix_in_spiral_order(square_matrix: List[List[int]]) -> List[int]:
         elif d == 3:
             for i in range(b, t-1, -1):
                 spiral.append(square_matrix[i][l])
-
             l += 1
 
         d = (d + 1) % 4
