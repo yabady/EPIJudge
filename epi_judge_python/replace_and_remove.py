@@ -1,3 +1,4 @@
+from asyncore import write
 import functools
 from typing import List
 
@@ -6,7 +7,21 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def replace_and_remove(size: int, s: List[str]) -> int:
-    # TODO - you fill in here.
+    real_index, a_count = 0,0
+    for i in range(size):
+        if s[i] != "b":
+            s[real_index] = s[i]
+            real_index += 1
+        if s[i] == 'a':
+            a_count += 1
+
+    print(size)
+    print(real_index)
+    print(s)
+    print(a_count)
+    print("testrtt")
+
+
     return 0
 
 
