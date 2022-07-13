@@ -3,6 +3,48 @@ from test_framework.test_failure import TestFailure
 
 
 def int_to_string(x: int) -> str:
+<<<<<<< HEAD
+    neg = False
+    res = []
+
+    if x < 0:
+        neg = True
+        x = -x
+
+    elif x == 0:
+        return "0"
+
+    while x:
+        res.append(chr(x % 10 + ord("0")))
+        x = x // 10
+
+    if neg:
+        return "-" + "".join(res[::-1])
+    else:
+        return "".join(res[::-1])
+
+
+def string_to_int(s: str) -> int:
+    # TODO - you fill in here.
+    res = 0
+    neg = False
+
+    if s[0] == '+':
+        s = s[1:]
+    elif s[0] == "-":
+        s = s[1:]
+        neg = True
+
+    if s[0] == 0:
+        return 0
+        
+    for i in range(len(s)):
+
+        if s[0] == "-":
+            neg = True
+            continue
+        res = res * 10 + (ord(s[i]) - ord("0"))
+=======
 
     neg = False
     res = []
@@ -57,6 +99,7 @@ def string_to_int(s: str) -> int:
         #
         digit = ord(s[i]) - ord("0")
         res = res * 10 + digit
+>>>>>>> a6dec57d848e26e00a2d250d2262bd1d2f0860ee
 
     if neg:
         res = -res
